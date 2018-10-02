@@ -1,0 +1,1 @@
+{"version":3,"file":"hello5.js","sources":["webpack:///./components/hello5.js"],"sourcesContent":["export default () => <p>Hello World 5 (imported dynamically) </p>;\n"],"mappings":";;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;;A","sourceRoot":""}
