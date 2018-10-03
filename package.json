@@ -4,10 +4,11 @@
   "description": "This example features:",
   "main": "index.js",
   "scripts": {
-    "dev": "node lib/server",
+    "dev": "concurrently \"npm run mock-server\" \"nodemon lib/server\"",
     "build": "next build",
     "export": "next export",
-    "start": "NODE_ENV=production node lib/server",
+    "build:serve": "npm run build && concurrently \"npm run mock-server\" \"NODE_ENV=production node lib/server\"",
+    "start": "concurrently \"npm run mock-server\" \"NODE_ENV=production node lib/server\"",
     "mock-server": "canned -p 5000 --relaxed_accept=true ./mocks/"
   },
   "dependencies": {
@@ -22,6 +23,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "canned": "^0.3.12"
+    "canned": "^0.3.12",
+    "concurrently": "^4.0.1",
+    "nodemon": "^1.18.4"
   }
 }
