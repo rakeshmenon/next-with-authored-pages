@@ -1,6 +1,6 @@
 # Example app with dynamic-imports and page authoring integration
 
-Clone this repo and run:
+Clone this repo and run following for development mode:
 
 ```bash
 npm install
@@ -10,12 +10,20 @@ yarn
 yarn dev
 ```
 
-Run the mock server (which serves the page services):
+Run the mock server separately (which serves the page services):
 
 ```bash
 npm run mock-server
 # or
 yarn mock-server
+```
+
+For production mode (all with mocks for now):
+
+```bash
+npm run build:serve
+# or
+yarn build:serve
 ```
 
 ## The idea behind the example
