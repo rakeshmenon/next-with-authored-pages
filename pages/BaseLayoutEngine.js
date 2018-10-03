@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import Header from '../components/Header';
 import ComponentRegistry from '../components/componentRegistry';
 
-export default class Index extends React.Component {
+export default class BaseLayoutEngine extends React.Component {
   renderComponents = (compArr, nested, level = 0) => {
     return compArr.map(item => {
       if (typeof item === 'string') {
