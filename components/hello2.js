@@ -7,10 +7,10 @@ const DynamicComponent3WithNoSSR = dynamic({
 });
 
 export default () => (
-  <>
+  <div>
     <p onClick={() => alert('Hello 2 component clicked!')}>
       Hello World 2 (imported dynamically){' '}
     </p>
     <DynamicComponent3WithNoSSR />
-  </>
+  </div>
 );

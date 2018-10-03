@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
-import Router from 'next/router';
-import pageLayout from '../mocks/test.json';
+import Header from '../components/Header';
 import ComponentRegistry from '../components/componentRegistry';
 
 export default class Index extends React.Component {
@@ -43,7 +42,12 @@ export default class Index extends React.Component {
   };
 
   render() {
-    const compArr = pageLayout.layout;
-    return <div>{this.renderComponents(compArr)}</div>;
+    const compArr = this.props.data.layout;
+    return (
+      <div>
+        <Header />
+        <>{this.renderComponents(compArr)}</>
+      </div>
+    );
   }
 }

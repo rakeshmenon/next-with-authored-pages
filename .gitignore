@@ -12,6 +12,7 @@ node_modules_*
 react-codemod
 coverage
 .env
+.next
 stuff
 build/*
 yarn-error.log

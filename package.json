@@ -7,13 +7,19 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "mock-server": "canned -p 5000 --relaxed_accept=true ./mocks/"
   },
   "dependencies": {
+    "es6-promise": "^4.2.5",
+    "isomorphic-fetch": "^2.2.1",
     "next": "latest",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "canned": "^0.3.12"
+  }
 }
