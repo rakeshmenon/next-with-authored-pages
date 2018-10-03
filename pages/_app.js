@@ -1,16 +1,17 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import BaseComponent from './index';
+import { Router } from '../lib/routes';
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 export default class MyApp extends App {
-  static async getInitialProps({ ctx }) {
+  static async getInitialProps({ ctx, query }) {
     let pageProps = {};
 
     const response = await fetch(
       `http://localhost:5000/page-service${
-        ctx.pathname === '/' ? '/home' : ctx.pathname
+        ctx.asPath === '/' ? '/home' : ctx.asPath
       }`,
       {
         headers: {

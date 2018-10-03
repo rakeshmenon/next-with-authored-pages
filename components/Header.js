@@ -1,19 +1,19 @@
-import Link from 'next/link'
+import { Link } from '../lib/routes';
 
 export default () => (
   <div>
-    <Link href='/'>
-      <a style={styles.a} >Home</a>
+    <Link route="/">
+      <a style={styles.a}>Home</a>
     </Link>
 
-    <Link href='/about'>
-      <a style={styles.a} >About</a>
+    <Link route="/about">
+      <a style={styles.a}>About</a>
     </Link>
   </div>
-)
+);
 
 const styles = {
   a: {
     marginRight: 10
   }
-}
+};
