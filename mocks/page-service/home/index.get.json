@@ -1,7 +1,7 @@
 {
   "layout": [
     "hello1",
-    ["hello4", "hello2", ["hello6", ["hello7"]], "hello5"],
+    ["hello4", ["hello6", ["hello6"]], "hello5"],
     "hello2",
     "hello3"
   ]
