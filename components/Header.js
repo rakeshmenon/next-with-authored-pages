@@ -5,7 +5,7 @@ const Header = ({ ctx, router }) => (
   <div>
     <Link route="/">
       <a style={styles.a} className={router.asPath === '/' ? 'active' : null}>
-        Home
+        <span>Home</span>
       </a>
     </Link>
 
@@ -14,16 +14,7 @@ const Header = ({ ctx, router }) => (
         style={styles.a}
         className={router.asPath === '/about' ? 'active' : null}
       >
-        About
-      </a>
-    </Link>
-
-    <Link route="/section">
-      <a
-        style={styles.a}
-        className={router.asPath === '/section' ? 'active' : null}
-      >
-        Sections
+        <span>About</span>
       </a>
     </Link>
   </div>
@@ -33,6 +24,8 @@ export default withRouter(Header);
 
 const styles = {
   a: {
-    marginRight: 10
+    marginRight: 10,
+    borderRight: '1px solid #555',
+    paddingRight: 10
   }
 };

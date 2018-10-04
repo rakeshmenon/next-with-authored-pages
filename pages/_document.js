@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
           body {
             margin: 20px
           }
-          a.active {
+          a.active span {
             color: black;
             font-weight: bold;
             padding-bottom: 3px;

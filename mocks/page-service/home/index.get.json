@@ -1,9 +1,67 @@
 {
-  "type": "array",
-  "layout": [
-    "hello1",
-    ["hello4", ["hello6", ["hello6"]], "hello5"],
-    "hello2",
-    "hello3"
-  ]
+  "type": "subsection",
+  "layout": {
+    "sections": [
+      {
+        "type": "12",
+        "components": [["hello1"]]
+      },
+      {
+        "type": "4-4-4",
+        "components": [["hello2"], ["hello5"], ["hello4"]]
+      },
+      {
+        "type": "3-3-3-3",
+        "components": [["hello5"], ["hello3"], ["hello7"], ["hello6"]]
+      },
+      {
+        "type": "12",
+        "components": [["hello4"]]
+      }
+    ],
+    "contexts": {
+      "hello1": {
+        "data": {
+          "prop1": 1,
+          "prop2": "hello1"
+        }
+      },
+      "hello2": {
+        "data": {
+          "prop1": 2,
+          "prop2": "hello2"
+        }
+      },
+      "hello3": {
+        "data": {
+          "prop1": 3,
+          "prop2": "hello3"
+        }
+      },
+      "hello4": {
+        "data": {
+          "prop1": 4,
+          "prop2": "hello4"
+        }
+      },
+      "hello5": {
+        "data": {
+          "prop1": 5,
+          "prop2": "hello5"
+        }
+      },
+      "hello6": {
+        "data": {
+          "prop1": 6,
+          "prop2": "hello6"
+        }
+      },
+      "hello7": {
+        "data": {
+          "prop1": 6,
+          "prop2": "hello6"
+        }
+      }
+    }
+  }
 }
