@@ -3,12 +3,20 @@
   "layout": {
     "sections": [
       {
-        "type": "9-3",
-        "components": [["hello1", "hello6"], ["hello3"]]
-      },
-      {
         "type": "4-4-4",
         "components": [["hello2"], ["hello5"], ["hello4"]]
+      },
+      {
+        "type": "3-3-3-3",
+        "components": [["hello5"], ["hello3"], ["hello7"], ["hello6"]]
+      },
+      {
+        "type": "5-7",
+        "components": [["hello3"], ["hello6"]]
+      },
+      {
+        "type": "9-3",
+        "components": [["hello1", "hello6"], ["hello3"]]
       }
     ],
     "contexts": {

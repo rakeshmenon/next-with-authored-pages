@@ -23,7 +23,16 @@ export default class MyDocument extends Document {
             defer
             src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
           />
-          <style>{`body { margin: 20px }`}</style>
+          <style>{`
+          body {
+            margin: 20px
+          }
+          a.active {
+            color: black;
+            font-weight: bold;
+            padding-bottom: 3px;
+            border-bottom: 1px solid;
+          }`}</style>
         </Head>
         <body>
           <Main />

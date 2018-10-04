@@ -7,7 +7,9 @@ class SubSection extends React.Component {
     return (
       <div
         className={`column is-${column}`}
-        style={{ border: '1px solid blue' }}
+        style={{
+          outline: '1px dotted brown'
+        }}
       >
         <>{arrayRenderer({ componentList: components, contexts })}</>
       </div>

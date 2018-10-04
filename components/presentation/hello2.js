@@ -15,6 +15,13 @@ export default ({ context }) => (
       </span>
     </p>
     {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
-    <DynamicComponent3WithNoSSR />
+    <br />
+    <div>
+      <p style={{ textDecoration: 'underline' }}>
+        Dynamic component "Hello3" with NO SSR:
+      </p>
+      <DynamicComponent3WithNoSSR />
+      (part of Hello2)
+    </div>
   </div>
 );

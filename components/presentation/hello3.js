@@ -1,7 +1,5 @@
-import Hello4 from './hello4';
-
 export default ({ context }) => (
-  <>
+  <div>
     <p onClick={() => alert('Hello 3 component clicked!')}>
       Component:{' '}
       <span>
@@ -9,6 +7,5 @@ export default ({ context }) => (
       </span>
     </p>
     {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
-    <Hello4 />
-  </>
+  </div>
 );

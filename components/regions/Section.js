@@ -15,7 +15,13 @@ class Section extends React.Component {
     });
 
     return (
-      <div className="columns" style={{ border: '1px solid red' }}>
+      <div
+        className="columns"
+        style={{
+          border: '1px solid red',
+          padding: '5px'
+        }}
+      >
         {subsections.map(subsection => {
           return (
             <SubSection
