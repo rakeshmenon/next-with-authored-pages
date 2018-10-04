@@ -6,10 +6,13 @@ const DynamicComponent3WithNoSSR = dynamic({
   ssr: false
 });
 
-export default () => (
+export default ({ context }) => (
   <div>
     <p onClick={() => alert('Hello 2 component clicked!')}>
       Hello World 2 (imported dynamically){' '}
+      {context && (
+        <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>
+      )}
     </p>
     <DynamicComponent3WithNoSSR />
   </div>

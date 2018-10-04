@@ -10,7 +10,7 @@ export default class BaseLayoutEngine extends React.Component {
         <Header />
         <div style={{ marginTop: '50px' }}>
           {type === 'array' ? (
-            <>{arrayRenderer(layout)}</>
+            <>{arrayRenderer({ componentList: layout })}</>
           ) : (
             <>{subsectionRenderer(layout)}</>
           )}

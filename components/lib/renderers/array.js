@@ -1,11 +1,16 @@
 import React, { Fragment } from 'react';
 import ComponentRegistry from '../componentRegistry';
 
-const arrayRenderer = (compArr, nested, level = 0) => {
-  if (!Array.isArray(compArr)) {
+const arrayRenderer = ({
+  componentList,
+  nested = false,
+  level = 0,
+  contexts = {}
+}) => {
+  if (!Array.isArray(componentList)) {
     return null;
   }
-  return compArr.map(item => {
+  return componentList.map(item => {
     if (typeof item === 'string') {
       const Component = ComponentRegistry.components[item];
       return (
@@ -19,7 +24,7 @@ const arrayRenderer = (compArr, nested, level = 0) => {
           <span>
             <strong>{item}</strong>
           </span>
-          <Component />
+          <Component context={contexts[item]} />
           <br />
           <br />
         </Fragment>

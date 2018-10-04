@@ -9,7 +9,7 @@ class SubSection extends React.Component {
         className={`column is-${column}`}
         style={{ border: '1px solid blue' }}
       >
-        <>{arrayRenderer(components)}</>
+        <>{arrayRenderer({ componentList: components, contexts })}</>
       </div>
     );
   }
