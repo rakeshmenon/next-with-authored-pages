@@ -17,7 +17,7 @@ const arrayRenderer = ({
         <Fragment key={Math.random()}>
           {!nested && (
             <h4>
-              <strong>First Level Component --></strong>
+              <strong>First Level Component &rarr;</strong>
             </h4>
           )}
           <br />
