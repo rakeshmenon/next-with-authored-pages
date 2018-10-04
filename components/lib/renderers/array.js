@@ -17,7 +17,10 @@ const arrayRenderer = ({
         <Fragment key={Math.random()}>
           {!nested && (
             <h4>
-              <strong>First Level Component &rarr;</strong>
+              <strong>
+                First Level Component &rarr;{' '}
+                <span style={{ color: 'green' }}>{item.toUpperCase()}</span>
+              </strong>
             </h4>
           )}
           <br />
