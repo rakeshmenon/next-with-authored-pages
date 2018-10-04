@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 
 const DynamicComponent3WithNoSSR = dynamic({
-  loader: () => import('../components/hello3'),
+  loader: () => import('./hello3'),
   loading: () => <p>Loading ...</p>,
   ssr: false
 });

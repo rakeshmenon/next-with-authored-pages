@@ -7,7 +7,7 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 export default class MyApp extends App {
-  static async getInitialProps({ ctx, query }) {
+  static async getInitialProps({ ctx }) {
     let pageProps = {};
 
     const response = await fetch(

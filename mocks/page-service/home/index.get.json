@@ -1,4 +1,5 @@
 {
+  "type": "array",
   "layout": [
     "hello1",
     ["hello4", ["hello6", ["hello6"]], "hello5"],
