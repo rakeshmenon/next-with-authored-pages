@@ -1,8 +1,9 @@
 import React from 'react';
-import Section from '../../regions/Section';
+import ComponentRegistry from '../componentRegistry';
 
 const subsectionRenderer = layoutInfo => {
   const { sections, contexts } = layoutInfo;
+  const Section = ComponentRegistry.regions.section;
 
   return sections.map((section, index) => {
     return (

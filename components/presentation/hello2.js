@@ -9,11 +9,12 @@ const DynamicComponent3WithNoSSR = dynamic({
 export default ({ context }) => (
   <div>
     <p onClick={() => alert('Hello 2 component clicked!')}>
-      Hello World 2 (imported dynamically){' '}
-      {context && (
-        <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>
-      )}
+      Component:{' '}
+      <span>
+        <strong>Hello2</strong>
+      </span>
     </p>
+    {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
     <DynamicComponent3WithNoSSR />
   </div>
 );

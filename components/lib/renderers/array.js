@@ -17,16 +17,13 @@ const arrayRenderer = ({
         <Fragment key={Math.random()}>
           {!nested && (
             <h4>
-              <strong>Direct</strong>
+              <strong>First Level Component --></strong>
             </h4>
           )}
-          <span>Component:</span>{' '}
-          <span>
-            <strong>{item}</strong>
-          </span>
+          <br />
           <Component context={contexts[item]} />
           <br />
-          <br />
+          <hr />
         </Fragment>
       );
     } else if (Array.isArray(item)) {
@@ -37,7 +34,11 @@ const arrayRenderer = ({
               Nested -- L{level + 1} -- {item.join(' // ')}
             </strong>
           </h5>
-          {arrayRenderer(item, true, level + 1)}
+          {arrayRenderer({
+            componentList: item,
+            nested: true,
+            level: level + 1
+          })}
         </div>
       );
     } else {

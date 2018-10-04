@@ -1,7 +1,14 @@
 import dynamic from 'next/dynamic';
 
 export default {
-  regions: {},
+  regions: {
+    section: dynamic(
+      import(/* webpackChunkName: "section" */ '../regions/Section')
+    ),
+    subsection: dynamic(
+      import(/* webpackChunkName: "subsection" */ '../regions/SubSection')
+    )
+  },
   components: {
     hello1: dynamic(
       import(/* webpackChunkName: "hello1" */ '../presentation/hello1')

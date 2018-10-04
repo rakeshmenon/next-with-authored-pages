@@ -3,11 +3,12 @@ import Hello2 from './hello2';
 export default ({ context }) => (
   <>
     <p>
-      Hello World 1 (imported dynamically)
-      {context && (
-        <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>
-      )}
+      Component:{' '}
+      <span>
+        <strong>Hello1</strong>
+      </span>
     </p>
+    {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
     <Hello2 />
   </>
 );

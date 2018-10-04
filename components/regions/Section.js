@@ -1,10 +1,11 @@
 import React from 'react';
-import SubSection from './SubSection';
+import ComponentRegistry from '../lib/componentRegistry';
 
 class Section extends React.Component {
   render() {
     const { subsectionInfo, contexts } = this.props;
     const subsectionType = subsectionInfo.type;
+    const SubSection = ComponentRegistry.regions.subsection;
 
     const subsections = subsectionType.split('-').map((column, index) => {
       return {
