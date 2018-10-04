@@ -32,7 +32,11 @@ export default class MyDocument extends Document {
             font-weight: bold;
             padding-bottom: 3px;
             border-bottom: 1px solid;
-          }`}</style>
+          }
+          a:last-child {
+            border-right: none !important;
+          }
+          `}</style>
         </Head>
         <body>
           <Main />
