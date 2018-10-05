@@ -6,9 +6,9 @@ const ComponentInfo = ({ name, onClick }) => {
         <strong>{name}</strong>
       </span>
       {onClick && (
-        <a className="buttom is-primary" onClick={onClick}>
+        <button className="button is-primary" onClick={onClick}>
           Click to test
-        </a>
+        </button>
       )}
     </p>
   );

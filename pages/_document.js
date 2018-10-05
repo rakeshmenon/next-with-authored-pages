@@ -36,6 +36,11 @@ export default class MyDocument extends Document {
           a:last-child {
             border-right: none !important;
           }
+          .button {
+            font-size: 12px;
+            margin-left: 10px;
+            margin-bottom: 5px;
+          }
           `}</style>
         </Head>
         <body>
