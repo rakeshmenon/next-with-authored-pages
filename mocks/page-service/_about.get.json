@@ -24,7 +24,7 @@
         "hello4": { "data": { "prop1": 4, "prop2": "hello4" } },
         "hello5": { "data": { "prop1": 5, "prop2": "hello5" } },
         "hello6": { "data": { "prop1": 6, "prop2": "hello6" } },
-        "hello7": { "data": { "prop1": 6, "prop2": "hello6" } }
+        "hello7": { "data": { "prop1": 7, "prop2": "hello7" } }
       }
     }
   }

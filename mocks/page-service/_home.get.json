@@ -65,8 +65,8 @@
         },
         "hello7": {
           "data": {
-            "prop1": 6,
-            "prop2": "hello6"
+            "prop1": 7,
+            "prop2": "hello7"
           }
         }
       }
