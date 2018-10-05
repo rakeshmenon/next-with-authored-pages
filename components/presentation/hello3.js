@@ -1,11 +1,12 @@
+import Context from '../utils/Context';
+import ComponentInfo from '../utils/ComponentInfo';
+
 export default ({ context }) => (
   <div>
-    <p onClick={() => alert('Hello 3 component clicked!')}>
-      Component:{' '}
-      <span>
-        <strong>Hello3</strong>
-      </span>
-    </p>
-    {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
+    <ComponentInfo
+      name="Hello3"
+      onClick={() => alert('Hello 3 component clicked!')}
+    />
+    <Context context={context} />
   </div>
 );

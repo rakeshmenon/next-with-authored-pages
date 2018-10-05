@@ -1,4 +1,6 @@
 import dynamic from 'next/dynamic';
+import Context from '../utils/Context';
+import ComponentInfo from '../utils/ComponentInfo';
 
 const DynamicComponent3WithNoSSR = dynamic({
   loader: () => import('./hello3'),
@@ -8,13 +10,11 @@ const DynamicComponent3WithNoSSR = dynamic({
 
 export default ({ context }) => (
   <div>
-    <p onClick={() => alert('Hello 2 component clicked!')}>
-      Component:{' '}
-      <span>
-        <strong>Hello2</strong>
-      </span>
-    </p>
-    {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
+    <ComponentInfo
+      name="Hello2"
+      onClick={() => alert('Hello 2 component clicked!')}
+    />
+    <Context context={context} />
     <br />
     <div>
       <p style={{ textDecoration: 'underline' }}>

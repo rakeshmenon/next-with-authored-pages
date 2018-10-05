@@ -10,21 +10,33 @@ const arrayRenderer = ({
   if (!Array.isArray(componentList)) {
     return null;
   }
+
+  const pageContext = contexts.page ? contexts.page : null;
+
   return componentList.map(item => {
     if (typeof item === 'string') {
       const Component = ComponentRegistry.components[item];
+      const componentContext = contexts.components
+        ? contexts.components[item]
+        : null;
+      const extendedComponentContext = Object.assign(
+        {},
+        pageContext,
+        componentContext
+      );
+
       return (
         <Fragment key={Math.random()}>
           {!nested && (
             <h4>
               <strong>
-                First Level Component &rarr;{' '}
+                SubSection Component &rarr;{' '}
                 <span style={{ color: 'green' }}>{item.toUpperCase()}</span>
               </strong>
             </h4>
           )}
           <br />
-          <Component context={contexts[item]} />
+          <Component context={extendedComponentContext} />
           <br />
           <hr />
         </Fragment>

@@ -1,11 +1,9 @@
+import Context from '../utils/Context';
+import ComponentInfo from '../utils/ComponentInfo';
+
 export default ({ context }) => (
   <>
-    <p>
-      Component:{' '}
-      <span>
-        <strong>Hello5</strong>
-      </span>
-    </p>
-    {context && <pre style={{ color: 'blue' }}>{JSON.stringify(context)}</pre>}
+    <ComponentInfo name="Hello5" />
+    <Context context={context} />
   </>
 );
