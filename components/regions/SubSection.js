@@ -1,5 +1,5 @@
 import React from 'react';
-import arrayRenderer from '../../components/lib/renderers/array';
+import arrayRenderer from '../lib/renderers/component';
 
 class SubSection extends React.Component {
   render() {

@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import arrayRenderer from '../components/lib/renderers/array';
+import arrayRenderer from '../components/lib/renderers/component';
 import subsectionRenderer from '../components/lib/renderers/subsection';
 
 export default class BaseLayoutEngine extends React.Component {

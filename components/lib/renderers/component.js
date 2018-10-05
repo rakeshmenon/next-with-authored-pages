@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import ComponentRegistry from '../componentRegistry';
 
-const arrayRenderer = ({
+const componentRenderer = ({
   componentList,
   nested = false,
   level = 0,
@@ -49,7 +49,7 @@ const arrayRenderer = ({
               Nested -- L{level + 1} -- {item.join(' // ')}
             </strong>
           </h5>
-          {arrayRenderer({
+          {componentRenderer({
             componentList: item,
             nested: true,
             level: level + 1
@@ -62,4 +62,4 @@ const arrayRenderer = ({
   });
 };
 
-export default arrayRenderer;
+export default componentRenderer;
