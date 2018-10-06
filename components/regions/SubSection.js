@@ -3,12 +3,7 @@ import componentRenderer from '../lib/renderers/component';
 
 const SubSection = ({ components, column, contexts, id }) => {
   return (
-    <div
-      className={`column is-${column}`}
-      style={{
-        outline: '1px dotted brown'
-      }}
-    >
+    <div className={`column is-${column}`} style={styles.subsection}>
       <>
         {componentRenderer({
           componentList: components,
@@ -18,6 +13,13 @@ const SubSection = ({ components, column, contexts, id }) => {
       </>
     </div>
   );
+};
+
+// Temporary :)
+const styles = {
+  subsection: {
+    outline: '1px dotted brown'
+  }
 };
 
 export default SubSection;

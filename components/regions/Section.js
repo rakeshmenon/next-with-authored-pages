@@ -14,18 +14,13 @@ const Section = ({ subsectionInfo, contexts }) => {
   });
 
   return (
-    <div
-      className="columns"
-      style={{
-        border: '1px solid red',
-        padding: '5px'
-      }}
-    >
+    <div className="columns" style={styles.section}>
       {subsections.map(subsection => {
+        const subsectionId = `${contexts.global.page.id}-${subsection.id}`;
         return (
           <SubSection
-            key={`${contexts.global.page.id}-${subsection.id}`}
-            id={`${contexts.global.page.id}-${subsection.id}`}
+            key={subsectionId}
+            id={subsectionId}
             column={subsection.column}
             components={subsection.components}
             contexts={contexts}
@@ -34,6 +29,14 @@ const Section = ({ subsectionInfo, contexts }) => {
       })}
     </div>
   );
+};
+
+// Temporary :)
+const styles = {
+  section: {
+    border: '1px solid red',
+    padding: '5px'
+  }
 };
 
 export default Section;
