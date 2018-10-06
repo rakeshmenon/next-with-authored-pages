@@ -3,12 +3,13 @@ import ComponentRegistry from '../lib/componentRegistry';
 
 class Section extends React.Component {
   render() {
-    const { subsectionInfo, contexts } = this.props;
+    const { id, subsectionInfo, contexts } = this.props;
     const subsectionType = subsectionInfo.type;
     const SubSection = ComponentRegistry.regions.subsection;
 
     const subsections = subsectionType.split('-').map((column, index) => {
       return {
+        id: subsectionInfo.id + column + index,
         column,
         components: subsectionInfo.components[index]
       };
@@ -25,7 +26,8 @@ class Section extends React.Component {
         {subsections.map(subsection => {
           return (
             <SubSection
-              key={Math.random()}
+              key={`${contexts.global.page.id}-${subsection.id}`}
+              id={`${contexts.global.page.id}-${subsection.id}`}
               column={subsection.column}
               components={subsection.components}
               contexts={contexts}

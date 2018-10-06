@@ -3,26 +3,30 @@
   "layout": {
     "sections": [
       {
+        "id": 111,
         "type": "12",
         "components": [["hello1"]]
       },
       {
+        "id": 222,
         "type": "4-4-4",
         "components": [["hello2"], ["hello5"], ["hello4"]]
       },
       {
+        "id": 333,
         "type": "3-3-3-3",
         "components": [["hello5"], ["hello3"], ["hello7"], ["hello6"]]
       },
       {
+        "id": 444,
         "type": "12",
         "components": [["hello4"]]
       }
     ],
     "contexts": {
-      "page": {
-        "global": {
-          "pageId": "page-1",
+      "global": {
+        "page": {
+          "id": "page-1",
           "name": "home"
         }
       },

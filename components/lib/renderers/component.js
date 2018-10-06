@@ -3,6 +3,7 @@ import ComponentRegistry from '../componentRegistry';
 
 const componentRenderer = ({
   componentList,
+  subsectionId = 'Unknown',
   nested = false,
   level = 0,
   contexts = {}
@@ -11,9 +12,9 @@ const componentRenderer = ({
     return null;
   }
 
-  const pageContext = contexts.page ? contexts.page : null;
+  const globalContext = contexts.global || null;
 
-  return componentList.map(item => {
+  return componentList.map((item, index) => {
     if (typeof item === 'string') {
       const Component = ComponentRegistry.components[item];
       const componentContext = contexts.components
@@ -21,12 +22,13 @@ const componentRenderer = ({
         : null;
       const extendedComponentContext = Object.assign(
         {},
-        pageContext,
+        globalContext,
         componentContext
       );
+      const componentId = `${subsectionId}-${item}-${index}`;
 
       return (
-        <Fragment key={Math.random()}>
+        <Fragment key={componentId}>
           {!nested && (
             <h4>
               <strong>
@@ -43,7 +45,7 @@ const componentRenderer = ({
       );
     } else if (Array.isArray(item)) {
       return (
-        <div key={Math.random()}>
+        <div key={componentId}>
           <h5>
             <strong>
               Nested -- L{level + 1} -- {item.join(' // ')}
