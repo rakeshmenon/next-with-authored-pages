@@ -1,6 +1,6 @@
 import Header from '../components/Header';
-import arrayRenderer from '../components/lib/renderers/component';
-import subsectionRenderer from '../components/lib/renderers/subsection';
+import componentRenderer from '../components/lib/renderers/component';
+import layoutRenderer from '../components/lib/renderers/layout';
 
 export default class BaseLayoutEngine extends React.Component {
   render() {
@@ -9,10 +9,10 @@ export default class BaseLayoutEngine extends React.Component {
       <div>
         <Header />
         <div style={{ marginTop: '50px' }}>
-          {type === 'array' ? (
-            <>{arrayRenderer({ componentList: layout })}</>
+          {type === 'sections' ? (
+            <>{layoutRenderer(layout)}</>
           ) : (
-            <>{subsectionRenderer(layout)}</>
+            <>{componentRenderer({ componentList: layout })}</>
           )}
         </div>
       </div>

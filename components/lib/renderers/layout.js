@@ -1,7 +1,7 @@
 import React from 'react';
 import ComponentRegistry from '../componentRegistry';
 
-const subsectionRenderer = layoutInfo => {
+const layoutRenderer = layoutInfo => {
   const { sections, contexts } = layoutInfo;
   const Section = ComponentRegistry.regions.section;
 
@@ -10,4 +10,4 @@ const subsectionRenderer = layoutInfo => {
   ));
 };
 
-export default subsectionRenderer;
+export default layoutRenderer;
