@@ -37,8 +37,8 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 
 ## Important files
 
-Application Layout Component: `pages/_app.js`
-Base Rendering Engine (for all routes): `pages/BaseLayoutEngine.js`
-Component Registry: `components/lib/componentRegistry.js`
-Layout Renderer: `components/lib/renderers/layout.js`
-Page Service Mocks: `mocks/page-service`
+- Application Layout Component: `pages/_app.js`
+- Base Rendering Engine (for all routes): `pages/BaseLayoutEngine.js`
+- Component Registry: `components/lib/componentRegistry.js`
+- Layout Renderer: `components/lib/renderers/layout.js`
+- Page Service Mocks: `mocks/page-service`
