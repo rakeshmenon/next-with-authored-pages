@@ -42,3 +42,23 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 - Component Registry: `components/lib/componentRegistry.js`
 - Layout Renderer: `components/lib/renderers/layout.js`
 - Page Service Mocks: `mocks/page-service`
+
+## Bundle Analyzer
+
+You can run one of these commands:
+
+```bash
+# Build and analyze the back end server bundle
+BUNDLE_ANALYZE=server yarn build
+
+# Build and analyze the front end browser bundle
+BUNDLE_ANALYZE=browser yarn build
+
+# Build and analyze both server and browser
+BUNDLE_ANALYZE=both yarn build
+
+# Build and analyze neither server nor browser
+yarn build
+```
+
+If you choose both then two different browser windows will open. One will be for the server bundle, one for the browser bundle.
