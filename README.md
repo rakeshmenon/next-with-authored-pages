@@ -1,4 +1,4 @@
-# Sample Next.js app with page authoring integration
+# Next.js sample app with page authoring integration
 
 Assumption: Page information available through a sample page service - and dynamically importing required components
 We can create a mapper to transform service response to required structure assumed.
@@ -42,6 +42,8 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 - Component Registry: `components/lib/componentRegistry.js`
 - Layout Renderer: `components/lib/renderers/layout.js`
 - Page Service Mocks: `mocks/page-service`
+
+Self-signed certificates under `certificates/` for running http2 server.
 
 ## Bundle Analyzer
 
