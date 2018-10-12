@@ -1,7 +1,7 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import BaseComponent from './BaseLayoutEngine';
-import { Router } from '../lib/routes';
+import { Router } from '../server/routes';
 import getConfig from 'next/config';
 
 require('es6-promise').polyfill();
