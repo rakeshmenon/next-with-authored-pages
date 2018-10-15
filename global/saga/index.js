@@ -7,9 +7,7 @@ export function* pageSaga(action) {
   try {
     const response = yield call(async () => {
       return await fetch(
-        `http://localhost:5000/page-service${
-          route === '/' ? '/home' : '/' + route
-        }`,
+        `http://localhost:5000/page-service${route === '/' ? '/home' : route}`,
         {
           headers: {
             Accept: 'application/json'

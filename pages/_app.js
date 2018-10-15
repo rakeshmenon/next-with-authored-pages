@@ -8,7 +8,6 @@ import getConfig from 'next/config';
 
 import initRedux from '../lib/dynamicStore/configureStore';
 import monitorSagas from '../lib/dynamicStore/monitorSagas';
-// import { globalDataStructure } from '../global/reducer';
 
 // import injectSagaAndReducer from '../lib/dynamicStore/injectSagaAndReducer';
 
@@ -32,7 +31,7 @@ class EnhancedPage extends App {
   }
 
   /**
-   * Method to dispatch all page level actions provided to the "enhance" method
+   * Method to dispatch all page level actions
    *
    * @param {Array} param.actions Array of action objects at page level
    * @param {Object} param.store Redux store object
@@ -61,7 +60,6 @@ class EnhancedPage extends App {
 
     const { store, req, res, query, pathname, asPath } = ctx;
     const isServer = typeof req !== 'undefined';
-    const initialActions = []; // TODO: should be fetched from component actions
 
     store.dispatch(serverActions.setCurrentRoute(pathname));
     let requestDetails = {
@@ -87,13 +85,8 @@ class EnhancedPage extends App {
       });
     }
 
-    const combinedPageActions =
-      initialActions instanceof Array
-        ? [...pageActions, ...initialActions]
-        : [...pageActions];
-
     EnhancedPage.dispatchActions({
-      actions: combinedPageActions,
+      actions: pageActions,
       store,
       needQuery: true,
       query: { ...query, ...clientParams },
@@ -115,7 +108,7 @@ class EnhancedPage extends App {
 
     return (
       <Container>
-        <BaseComponent {...pageData} />
+        <BaseComponent pageData={pageData} {...pageProps} />
       </Container>
     );
   }
