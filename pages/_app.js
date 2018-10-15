@@ -44,11 +44,11 @@ class EnhancedPage extends App {
     actions.map(action =>
       store.dispatch(
         typeof action === 'function'
-          ? WrapperComponent.addRequestDetails(
+          ? EnhancedPage.addRequestDetails(
               action(needQuery ? query : undefined),
               requestDetails
             )
-          : WrapperComponent.addRequestDetails(
+          : EnhancedPage.addRequestDetails(
               { type: action, query: needQuery ? query : undefined },
               requestDetails
             )
@@ -64,7 +64,9 @@ class EnhancedPage extends App {
     const initialActions = [];
 
     store.dispatch(serverActions.setCurrentRoute(pathname));
-    let requestDetails = {};
+    let requestDetails = {
+      route: asPath
+    };
     let clientParams = {};
 
     if (isServer) {
@@ -75,17 +77,17 @@ class EnhancedPage extends App {
       store.dispatch(serverActions.setPageQuery(clientParams));
     }
 
-    const response = await fetch(
-      `${publicRuntimeConfig.PAGE_SERVICE_DOMAIN}/page-service${
-        ctx.asPath === '/' ? '/home' : ctx.asPath
-      }`,
-      {
-        headers: {
-          Accept: 'application/json'
-        }
-      }
-    );
-    pageProps.data = await response.json();
+    // const response = await fetch(
+    //   `${publicRuntimeConfig.PAGE_SERVICE_DOMAIN}/page-service${
+    //     ctx.asPath === '/' ? '/home' : ctx.asPath
+    //   }`,
+    //   {
+    //     headers: {
+    //       Accept: 'application/json'
+    //     }
+    //   }
+    // );
+    // pageProps.data = await response.json();
 
     if (isServer && Array.isArray(globalActions)) {
       EnhancedPage.dispatchActions({
@@ -121,19 +123,21 @@ class EnhancedPage extends App {
   }
 
   render() {
-    const { pageProps } = this.props;
+    const { pageProps, pageData } = this.props;
 
     return (
       <Container>
-        <BaseComponent {...pageProps} />
+        <BaseComponent {...pageData} />
       </Container>
     );
   }
 }
 
 const withConnect = connect(
-  () => {
-    return {};
+  state => {
+    return {
+      pageData: state.global.pageData.response
+    };
   },
   () => {
     return {};

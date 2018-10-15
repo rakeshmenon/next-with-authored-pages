@@ -5,7 +5,7 @@ import layoutRenderer from '../components/lib/renderers/layout';
 
 export default class BaseLayoutEngine extends React.Component {
   render() {
-    const { type, layout } = this.props.data;
+    const { type, layout } = this.props;
     return (
       <>
         <Header />

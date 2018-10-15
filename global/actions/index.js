@@ -2,6 +2,8 @@ import {
   CURRENT_ROUTE,
   PAGE_URL,
   PAGE_QUERY,
+  INVOKE_PAGE_SERVICE,
+  SET_PAGE_DATA,
   GLOBAL_DATA_FAILURE
 } from '../constants';
 
@@ -10,7 +12,17 @@ export const globalDataFailure = error => ({
   error
 });
 
-export const pageActions = [];
+export const invokePageService = data => ({
+  type: INVOKE_PAGE_SERVICE,
+  data
+});
+
+export const setPageData = data => ({
+  type: SET_PAGE_DATA,
+  data
+});
+
+export const pageActions = [invokePageService];
 
 export default [];
 
