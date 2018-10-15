@@ -31,8 +31,11 @@ export default {
     ),
     hello7: dynamic(
       import(/* webpackChunkName: "hello7" */ '../presentation/hello7')
-    )
+    ),
 
     // Container Components
+    hello1Container: dynamic(
+      import(/* webpackChunkName: "hello1container" */ '../containers/Hello1Container')
+    )
   }
 };

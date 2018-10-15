@@ -1,6 +1,6 @@
 import React from 'react';
 import App, { Container } from 'next/app';
-import { connect } from 'react-redux';
+import { connect, Provider } from 'react-redux';
 import { compose } from 'redux';
 import BaseComponent from './BaseLayoutEngine';
 import { Router } from '../server/routes';
@@ -104,11 +104,13 @@ class EnhancedPage extends App {
   }
 
   render() {
-    const { pageProps, pageData } = this.props;
+    const { pageProps, pageData, store } = this.props;
 
     return (
       <Container>
-        <BaseComponent pageData={pageData} {...pageProps} />
+        <Provider store={store}>
+          <BaseComponent pageData={pageData} {...pageProps} />
+        </Provider>
       </Container>
     );
   }
