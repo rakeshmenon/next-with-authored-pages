@@ -8,9 +8,8 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 const { publicRuntimeConfig } = getConfig();
-console.log(publicRuntimeConfig);
 
-export default class MyApp extends App {
+class EnhancedPage extends App {
   static async getInitialProps({ ctx }) {
     let pageProps = {};
 
@@ -43,3 +42,5 @@ export default class MyApp extends App {
     );
   }
 }
+
+export default EnhancedPage;

@@ -13,7 +13,7 @@ export default ({ context }) => (
     <ComponentInfo
       name="Hello2"
       onClick={() =>
-        alert(
+        console.info(
           `Hello 2 component clicked!\n\n${
             context ? `Context: ${JSON.stringify(context, null, 2)}` : ''
           }`
