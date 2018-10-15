@@ -61,7 +61,7 @@ class EnhancedPage extends App {
 
     const { store, req, res, query, pathname, asPath } = ctx;
     const isServer = typeof req !== 'undefined';
-    const initialActions = [];
+    const initialActions = []; // TODO: should be fetched from component actions
 
     store.dispatch(serverActions.setCurrentRoute(pathname));
     let requestDetails = {
@@ -76,18 +76,6 @@ class EnhancedPage extends App {
       clientParams = parseQueryParams(asPath);
       store.dispatch(serverActions.setPageQuery(clientParams));
     }
-
-    // const response = await fetch(
-    //   `${publicRuntimeConfig.PAGE_SERVICE_DOMAIN}/page-service${
-    //     ctx.asPath === '/' ? '/home' : ctx.asPath
-    //   }`,
-    //   {
-    //     headers: {
-    //       Accept: 'application/json'
-    //     }
-    //   }
-    // );
-    // pageProps.data = await response.json();
 
     if (isServer && Array.isArray(globalActions)) {
       EnhancedPage.dispatchActions({
