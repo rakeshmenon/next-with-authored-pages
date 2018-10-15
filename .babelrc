@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["./global", "./lib", "./server", "./utils"],
+        "alias": {
+          "~": "./node_modules"
+        },
+        "cwd": "babelrc"
+      }
+    ]
+  ],
+  "env": {
+    "development": {
+      "presets": ["next/babel"]
+    },
+    "production": {
+      "presets": ["next/babel"]
+    }
+  }
+}

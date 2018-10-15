@@ -23,15 +23,17 @@
     "next-redux-wrapper": "^2.0.0",
     "next-routes": "^1.4.2",
     "next-runtime-dotenv": "^1.0.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.5",
     "redux-saga": "^0.16.2"
   },
   "author": "Rakesh Menon",
   "license": "ISC",
   "devDependencies": {
+    "babel-plugin-module-resolver": "^3.1.1",
     "canned": "^0.3.12",
     "concurrently": "^4.0.1",
     "nodemon": "^1.18.4"
