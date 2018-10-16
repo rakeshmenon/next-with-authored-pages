@@ -77,6 +77,8 @@ class EnhancedPage extends App {
       );
     }, []);
 
+    console.log(pageData.pageId);
+
     return {
       key: pageData.pageId,
       components
@@ -190,6 +192,7 @@ class EnhancedPage extends App {
 
   render() {
     const { pageProps, pageData, store } = this.props;
+
     return (
       <Container>
         <Provider store={store}>

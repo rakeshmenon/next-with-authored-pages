@@ -2,10 +2,13 @@ import { SET_PAGE_DATA } from '../constants';
 
 export const initState = {};
 
-const setPageData = (state, { data }) =>
-  Object.assign({}, state, {
+const setPageData = (state, { data }) => {
+  console.log('Page Data:');
+  console.log(data);
+  return Object.assign({}, state, {
     response: data
   });
+};
 
 export default (state = initState, action = {}) => {
   switch (action.type) {

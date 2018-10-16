@@ -1,9 +1,4 @@
-import {
-  CURRENT_ROUTE,
-  PAGE_URL,
-  PAGE_QUERY,
-  SET_PAGE_DATA
-} from '../constants';
+import { CURRENT_ROUTE, PAGE_URL, PAGE_QUERY } from '../constants';
 
 export const initState = {};
 
@@ -22,11 +17,6 @@ const setPageQuery = (state, { pageQuery }) =>
     pageQuery
   });
 
-const setPageData = (state, { data }) =>
-  Object.assign({}, state, {
-    pageData: data
-  });
-
 export default (state = initState, action = {}) => {
   switch (action.type) {
     case CURRENT_ROUTE:
@@ -35,8 +25,6 @@ export default (state = initState, action = {}) => {
       return setPageUrl(state, action);
     case PAGE_QUERY:
       return setPageQuery(state, action);
-    case SET_PAGE_DATA:
-      return setPageData(state, action);
     default:
       return state;
   }

@@ -15,8 +15,8 @@ const {
 export function* pageSaga(action) {
   const { page } = action.data;
   try {
-    const response = yield call(async () => {
-      return await fetch(
+    const data = yield call(async () => {
+      const response = await fetch(
         `${PAGE_SERVICE_DOMAIN}/page-service/${page || 'home'}`,
         {
           headers: {
@@ -24,8 +24,9 @@ export function* pageSaga(action) {
           }
         }
       );
+      return await response.json();
     });
-    const data = yield response.json();
+
     yield put(setPageData(data));
   } catch (err) {
     yield put(globalDataFailure(err));
