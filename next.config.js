@@ -2,6 +2,7 @@ const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const nextRuntimeDotenv = require('next-runtime-dotenv');
 
 const environment = process.env.NODE_ENV || 'development';
+const analyzerMode = process.env.ANALYZE_BUNDLE;
 
 const withConfig = nextRuntimeDotenv({
   path: `${__dirname}/config/envs/${environment}.env`,
@@ -11,8 +12,8 @@ const withConfig = nextRuntimeDotenv({
 
 module.exports = withConfig(
   withBundleAnalyzer({
-    analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
-    analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
+    analyzeServer: ['server', 'both'].includes(analyzerMode),
+    analyzeBrowser: ['browser', 'both'].includes(analyzerMode),
     bundleAnalyzerConfig: {
       server: {
         analyzerMode: 'static',

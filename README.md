@@ -51,13 +51,13 @@ You can run one of these commands:
 
 ```bash
 # Build and analyze the back end server bundle
-BUNDLE_ANALYZE=server yarn build
+ANALYZE_BUNDLE=server yarn build
 
 # Build and analyze the front end browser bundle
-BUNDLE_ANALYZE=browser yarn build
+ANALYZE_BUNDLE=browser yarn build
 
 # Build and analyze both server and browser
-BUNDLE_ANALYZE=both yarn build
+ANALYZE_BUNDLE=both yarn build
 
 # Build and analyze neither server nor browser
 yarn build
