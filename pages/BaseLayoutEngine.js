@@ -1,7 +1,7 @@
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
-import componentRenderer from '../components/lib/renderers/component';
-import layoutRenderer from '../components/lib/renderers/layout';
+import Header from '../modules/common/Header';
+import Footer from '../modules/common/Footer';
+import componentRenderer from '../modules/lib/renderers/component';
+import layoutRenderer from '../modules/lib/renderers/layout';
 
 export default class BaseLayoutEngine extends React.Component {
   render() {

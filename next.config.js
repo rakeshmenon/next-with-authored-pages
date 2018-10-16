@@ -6,7 +6,7 @@ const analyzerMode = process.env.ANALYZE_BUNDLE;
 
 const withConfig = nextRuntimeDotenv({
   path: `${__dirname}/config/envs/${environment}.env`,
-  public: ['PAGE_SERVICE_DOMAIN'],
+  public: ['PAGE_SERVICE_DOMAIN', 'COMPONENT_SERVICE_DOMAIN'],
   server: []
 });
 

@@ -6,7 +6,7 @@
       {
         "id": 555,
         "type": "4-4-4",
-        "components": [["hello2"], ["hello5"], ["hello4"]]
+        "components": [["hello2"], ["hello1Container"], ["hello4"]]
       },
       {
         "id": 666,

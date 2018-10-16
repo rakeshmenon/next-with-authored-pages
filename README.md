@@ -39,8 +39,8 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 
 - Application Layout Component: `pages/_app.js`
 - Base Rendering Engine (for all routes): `pages/BaseLayoutEngine.js`
-- Component Registry: `components/lib/componentRegistry.js`
-- Layout Renderer: `components/lib/renderers/layout.js`
+- Component Registry: `modules/lib/componentRegistry.js`
+- Layout Renderer: `modules/lib/renderers/layout.js`
 - Page Service Mocks: `mocks/page-service`
 
 Self-signed certificates under `certificates/` for running http2 server.
