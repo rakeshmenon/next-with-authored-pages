@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import ComponentRegistry from '../componentRegistry';
+import Loadables from '../../loadables';
 
 const componentRenderer = ({
   componentList,
@@ -16,7 +16,7 @@ const componentRenderer = ({
 
   return componentList.map((item, index) => {
     if (typeof item === 'string') {
-      const Component = ComponentRegistry.components[item];
+      const Component = Loadables.components[item];
       const componentContext = contexts.components
         ? contexts.components[item]
         : null;

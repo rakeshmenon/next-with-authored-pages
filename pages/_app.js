@@ -35,20 +35,16 @@ class EnhancedPage extends App {
    *
    * @param {Array} param.actions Array of action objects at page level
    * @param {Object} param.store Redux store object
-   * @param {boolean} param.needQuery Flag to indicate if the actions need the query params
    * @param {Object} param.query Query params of the incoming request
    * @param {Object} param.requestDetails Object containing details of incoming request
    */
-  static dispatchActions({ actions, store, needQuery, query, requestDetails }) {
+  static dispatchActions({ actions, store, query, requestDetails }) {
     actions.map(action =>
       store.dispatch(
         typeof action === 'function'
-          ? EnhancedPage.addRequestDetails(
-              action(needQuery ? query : undefined),
-              requestDetails
-            )
+          ? EnhancedPage.addRequestDetails(action(query), requestDetails)
           : EnhancedPage.addRequestDetails(
-              { type: action, query: needQuery ? query : undefined },
+              { type: action, query },
               requestDetails
             )
       )
@@ -62,9 +58,7 @@ class EnhancedPage extends App {
     const isServer = typeof req !== 'undefined';
 
     store.dispatch(serverActions.setCurrentRoute(pathname));
-    let requestDetails = {
-      route: asPath
-    };
+    let requestDetails = {};
     let clientParams = {};
 
     if (isServer) {
@@ -79,7 +73,6 @@ class EnhancedPage extends App {
       EnhancedPage.dispatchActions({
         actions: globalActions,
         store,
-        needQuery: true,
         query,
         requestDetails
       });
@@ -88,7 +81,6 @@ class EnhancedPage extends App {
     EnhancedPage.dispatchActions({
       actions: pageActions,
       store,
-      needQuery: true,
       query: { ...query, ...clientParams },
       requestDetails
     });

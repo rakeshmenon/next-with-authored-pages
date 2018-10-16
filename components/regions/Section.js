@@ -1,5 +1,5 @@
 import React from 'react';
-import ComponentRegistry from '../lib/componentRegistry';
+import ComponentRegistry from '../loadables';
 
 const Section = ({ subsectionInfo, contexts }) => {
   const subsectionType = subsectionInfo.type;

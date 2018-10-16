@@ -1,9 +1,9 @@
 import React from 'react';
-import ComponentRegistry from '../componentRegistry';
+import Loadables from '../../loadables';
 
 const layoutRenderer = layoutInfo => {
   const { sections, contexts } = layoutInfo;
-  const Section = ComponentRegistry.regions.section;
+  const Section = Loadables.regions.section;
 
   return sections.map(section => (
     <Section key={section.id} subsectionInfo={section} contexts={contexts} />
