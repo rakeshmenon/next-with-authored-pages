@@ -11,7 +11,10 @@ import monitorSagas from '../lib/dynamicStore/monitorSagas';
 
 // import injectSagaAndReducer from '../lib/dynamicStore/injectSagaAndReducer';
 
-import globalActions, { serverActions, pageActions } from '../global/actions';
+import globalActions, {
+  serverActions,
+  pageActions
+} from '../redux/global/actions';
 import parseQueryParams from '../utils/parseQueryParams';
 
 require('es6-promise').polyfill();
