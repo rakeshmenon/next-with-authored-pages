@@ -40,7 +40,7 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 - Sections: Horizontal rows
 - SubSections: Columns inside the rows
 
-## Page service response explanation:
+## Page service response structure:
 
 ```javascript
 {
@@ -57,7 +57,7 @@ This examples shows how to dynamically import modules via [`import()`](https://g
       },
       ...
     ],
-    "contexts": {
+    "contexts": { // contexts to be passed to the components
       "global": {
         "page": {
           "id": "page-1",
