@@ -42,7 +42,7 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 
 ## Page service response explanation:
 
-```json
+```javascript
 {
   "type": "sections",
   "layout": {
