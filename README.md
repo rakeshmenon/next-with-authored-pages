@@ -35,6 +35,52 @@ yarn build:serve
 
 This examples shows how to dynamically import modules via [`import()`](https://github.com/tc39/proposal-dynamic-import) API and futher extend it to a use case where the page layouts are governed by an external CMS.
 
+## Concepts/Assumptions:
+
+- Sections: Horizontal rows
+- SubSections: Columns inside the rows
+
+## Page service response explanation:
+
+```json
+{
+  "type": "sections",
+  "layout": {
+    "sections": [
+      {
+        "id": 123 //id of the subsection>,
+        "type": "3-5-4", // subsection column division inside the section [details above] assuming a 12-column for section
+        "components": [
+          ["hello1"], // component inside subsection with 3 columns
+          ["hello2", "hello3"], // component inside subsection with 5 columns. These components will be stacked vertically.
+          ["hello4"]] //  component inside subsection with 4 columns
+      },
+      ...
+    ],
+    "contexts": {
+      "global": {
+        "page": {
+          "id": "page-1",
+          "name": "home",
+          ... // more page level context
+        },
+        ... //more global context
+      },
+      "components": {
+        "hello1": {
+          "data": {
+            "prop1": 1,
+            "prop2": "hello1",
+            ... // more hello1 component context
+          }
+        },
+        ... // contexts for more components
+      }
+    }
+  }
+}
+```
+
 ## Important files
 
 - Application Layout Component: `pages/_app.js`
