@@ -48,7 +48,7 @@ This examples shows how to dynamically import modules via [`import()`](https://g
   "layout": {
     "sections": [
       {
-        "id": 123 //id of the subsection>,
+        "id": 123 //identifier for the section,
         "type": "3-5-4", // subsection column division inside the section [details above] assuming a 12-column for section
         "components": [
           ["hello1"], // component inside subsection with 3 columns
