@@ -1,17 +1,21 @@
 import React from 'react';
 import App, { Container } from 'next/app';
 import BaseComponent from './BaseLayoutEngine';
-import { Router } from '../lib/routes';
+import { Router } from '../server/routes';
+import getConfig from 'next/config';
 
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
+
+const { publicRuntimeConfig } = getConfig();
+console.log(publicRuntimeConfig);
 
 export default class MyApp extends App {
   static async getInitialProps({ ctx }) {
     let pageProps = {};
 
     const response = await fetch(
-      `http://localhost:5000/page-service${
+      `${publicRuntimeConfig.PAGE_SERVICE_DOMAIN}/page-service${
         ctx.asPath === '/' ? '/home' : ctx.asPath
       }`,
       {

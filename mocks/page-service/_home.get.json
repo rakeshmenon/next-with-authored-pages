@@ -136,9 +136,9 @@
       }
     ],
     "contexts": {
-      "page": {
-        "global": {
-          "pageId": "page-1",
+      "global": {
+        "page": {
+          "id": "page-1",
           "name": "home"
         }
       },

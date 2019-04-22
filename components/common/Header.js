@@ -1,5 +1,5 @@
 import { withRouter } from 'next/router';
-import { Link } from '../lib/routes';
+import { Link } from '../../server/routes';
 
 const Header = ({ ctx, router }) => (
   <div>
