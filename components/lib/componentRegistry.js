@@ -9,7 +9,7 @@ export default {
       import(/* webpackChunkName: "subsection" */ '../regions/SubSection')
     )
   },
-  components: {
+  modules: {
     hello1: dynamic(
       import(/* webpackChunkName: "hello1" */ '../presentation/hello1')
     ),

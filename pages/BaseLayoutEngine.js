@@ -1,21 +1,15 @@
-import Header from '../components/Header';
-import arrayRenderer from '../components/lib/renderers/component';
-import subsectionRenderer from '../components/lib/renderers/subsection';
+import Head from 'next/head';
+import layoutRenderer from '../components/lib/renderers/layoutRenderer';
 
 export default class BaseLayoutEngine extends React.Component {
   render() {
-    const { type, layout } = this.props.data;
+    const { layout } = this.props.data;
+
     return (
-      <div>
-        <Header />
-        <div style={{ marginTop: '50px' }}>
-          {type === 'array' ? (
-            <>{arrayRenderer({ componentList: layout })}</>
-          ) : (
-            <>{subsectionRenderer(layout)}</>
-          )}
-        </div>
-      </div>
+      <>
+        <Head />
+        <main>{layoutRenderer(layout)}</main>
+      </>
     );
   }
 }
