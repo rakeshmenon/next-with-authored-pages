@@ -3,34 +3,108 @@
   "layout": {
     "sections": [
       {
-        "id": 555,
-        "type": "4-4-4",
-        "components": [["hello2"], ["hello5"], ["hello4"]]
+        "id": "222",
+        "type": {
+          "columns": [
+            {
+              "lg": 6,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            {
+              "lg": 6,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            }
+          ],
+          "offsets": []
+        },
+        "modules": [
+          [
+            {
+              "id": "hello1-1",
+              "name": "hello1"
+            }
+          ],
+          [
+            {
+              "id": "hello7-1",
+              "name": "hello7"
+            }
+          ]
+        ]
       },
       {
-        "id": 666,
-        "type": "3-3-3-3",
-        "components": [["hello5"], ["hello3"], ["hello7"], ["hello6"]]
+        "id": "333",
+        "type": {
+          "columns": [
+            {
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            {
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            {
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            }
+          ],
+          "offsets": []
+        },
+        "modules": [
+          [
+            {
+              "id": "hello5-2",
+              "name": "hello5"
+            }
+          ],
+          [
+            {
+              "id": "hello3-1",
+              "name": "hello3"
+            }
+          ],
+          [
+            {
+              "id": "hello6-1",
+              "name": "hello6"
+            }
+          ]
+        ]
       },
       {
-        "id": 777,
-        "type": "5-7",
-        "components": [["hello3"], ["hello6"]]
-      },
-      {
-        "id": 888,
-        "type": "9-3",
-        "components": [["hello1", "hello6"], ["hello3"]]
+        "id": "111",
+        "type": {
+          "bleed": true
+        },
+        "modules": [
+          [
+            {
+              "id": "hello2-1",
+              "name": "hello1"
+            }
+          ]
+        ]
       }
     ],
     "contexts": {
-      "global": {
-        "page": {
-          "id": "page-2",
+      "page": {
+        "global": {
+          "pageId": "page-2-about",
           "name": "about"
         }
       },
-      "components": {
+      "modules": {
         "hello1": {
           "data": {
             "prop1": 1,
@@ -38,7 +112,10 @@
           }
         },
         "hello2": {
-          "data": { "prop1": 2, "prop2": "hello2" }
+          "data": {
+            "prop1": 2,
+            "prop2": "hello2"
+          }
         },
         "hello3": {
           "data": {
