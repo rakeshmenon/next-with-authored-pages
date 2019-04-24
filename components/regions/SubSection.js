@@ -1,25 +1,37 @@
 import React from 'react';
-import componentRenderer from '../lib/renderers/component';
+import componentRenderer from '../lib/renderers/componentRenderer';
+import { Col } from 'react-styled-flexboxgrid';
 
-const SubSection = ({ components, column, contexts, id }) => {
-  return (
-    <div className={`column is-${column}`} style={styles.subsection}>
-      <>
-        {componentRenderer({
-          componentList: components,
-          contexts,
-          subsectionId: id
-        })}
-      </>
-    </div>
-  );
-};
+const SubSection = ({ modules, grids, contexts, id, position }) => {
+  const renderer = componentRenderer({
+    componentList: modules,
+    subsectionId: id,
+    contexts
+  });
 
-// Temporary :)
-const styles = {
-  subsection: {
-    outline: '1px dotted brown'
+  let modulesToRender = null;
+
+  if (grids.bleed) {
+    modulesToRender = <div>{renderer}</div>;
+  } else {
+    const { columns, offsets } = grids;
+
+    const cols = columns[position] || columns[0] || {};
+    const { lg: lgOffset, md: mdOffset, sm: smOffset, xs: xsOffset } =
+      offsets[position] || offsets[0] || {};
+
+    const columnProps = {
+      ...cols,
+      lgOffset,
+      mdOffset,
+      smOffset,
+      xsOffset
+    };
+
+    modulesToRender = <Col {...columnProps}>{renderer}</Col>;
   }
+
+  return modulesToRender;
 };
 
 export default SubSection;

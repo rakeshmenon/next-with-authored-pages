@@ -1,42 +1,53 @@
 import React from 'react';
-import ComponentRegistry from '../lib/componentRegistry';
+import { Grid, Row } from 'react-styled-flexboxgrid';
+import SubSection from '../regions/SubSection';
 
 const Section = ({ subsectionInfo, contexts }) => {
   const subsectionType = subsectionInfo.type;
-  const SubSection = ComponentRegistry.regions.subsection;
 
-  const subsections = subsectionType.split('-').map((column, index) => {
-    return {
-      id: subsectionInfo.id + column + index,
-      column,
-      components: subsectionInfo.components[index]
-    };
+  const { columns, offsets, bleed } = subsectionType;
+  let subsections;
+  const grids = { columns, offsets };
+
+  if (!bleed) {
+    subsections = subsectionInfo.modules.map((modules, index) => ({
+      id: subsectionInfo.id + '-' + modules[0].id + '-' + index,
+      position: index,
+      grids,
+      modules
+    }));
+  } else {
+    subsections = subsectionInfo.modules.map((module, index) => ({
+      id: subsectionInfo.id + '-bleed-' + index,
+      grids: {
+        bleed: true
+      },
+      modules: module
+    }));
+  }
+
+  const subsectionMarkup = subsections.map(subsection => {
+    const subsectionId = `${contexts.page.global.pageId}-${subsection.id}`;
+
+    return (
+      <SubSection
+        key={subsectionId}
+        id={subsectionId}
+        position={subsection.position}
+        grids={subsection.grids}
+        modules={subsection.modules}
+        contexts={contexts}
+      />
+    );
   });
 
-  return (
-    <div className="columns" style={styles.section}>
-      {subsections.map(subsection => {
-        const subsectionId = `${contexts.global.page.id}-${subsection.id}`;
-        return (
-          <SubSection
-            key={subsectionId}
-            id={subsectionId}
-            column={subsection.column}
-            components={subsection.components}
-            contexts={contexts}
-          />
-        );
-      })}
-    </div>
+  return bleed ? (
+    <section className="bleed-section">{subsectionMarkup}</section>
+  ) : (
+    <Grid>
+      <Row>{subsectionMarkup}</Row>
+    </Grid>
   );
-};
-
-// Temporary :)
-const styles = {
-  section: {
-    border: '1px solid red',
-    padding: '5px'
-  }
 };
 
 export default Section;

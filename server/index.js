@@ -24,13 +24,17 @@ app.prepare().then(() => {
   app.use(serve(__dirname + '/../static'));
 
   router.get('*', async ctx => {
-    await requestHandler(ctx.req, ctx.res);
-    ctx.respond = false;
+    try {
+      await requestHandler(ctx.req, ctx.res);
+      ctx.respond = false;
+    } catch (err) {}
   });
 
   app.use(async (ctx, next) => {
     ctx.res.statusCode = 200;
-    await next();
+    try {
+      await next();
+    } catch (err) {}
   });
 
   app.use(router.routes());

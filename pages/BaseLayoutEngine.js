@@ -1,22 +1,16 @@
+import Head from 'next/head';
 import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
-import componentRenderer from '../components/lib/renderers/component';
-import layoutRenderer from '../components/lib/renderers/layout';
+import layoutRenderer from '../components/lib/renderers/layoutRenderer';
 
 export default class BaseLayoutEngine extends React.Component {
   render() {
-    const { type, layout } = this.props.data;
+    const { layout } = this.props.data;
+
     return (
       <>
+        <Head />
         <Header />
-        <div style={{ marginTop: '50px' }}>
-          {type === 'sections' ? (
-            <>{layoutRenderer(layout)}</>
-          ) : (
-            <>{componentRenderer({ componentList: layout })}</>
-          )}
-        </div>
-        <Footer />
+        <main>{layoutRenderer(layout)}</main>
       </>
     );
   }
