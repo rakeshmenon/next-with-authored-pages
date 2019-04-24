@@ -48,26 +48,78 @@ This examples shows how to dynamically import modules via [`import()`](https://g
   "layout": {
     "sections": [
       {
-        "id": 123 //identifier for the section,
-        "type": "3-5-4", // subsection column division inside the section [details above] assuming a 12-column for section
-        "components": [
-          ["hello1"], // component inside subsection with 3 columns
-          ["hello2", "hello3"], // component inside subsection with 5 columns. These components will be stacked vertically.
-          ["hello4"]] //  component inside subsection with 4 columns
+        "id": "111", //identifier for the section,
+        "type": { // subsection column division inside the section [details above] assuming a 12-column for section
+          "bleed": true // this is a case where it is full bleed
+        },
+        "modules": [
+          [
+            {
+              "id": "hello1-1", // component identifier
+              "name": "hello1" // component name
+            }
+          ]
+        ]
+      },
+      {
+        "id": "222",
+        "type": {
+          "columns": [ // column divisions by viewports
+            { // for hello2 component
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            { // for hello5 component
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            { // for hello4 component
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            }
+          ],
+          "offsets": [] // column divisions by viewports - same format as above
+        },
+        "modules": [
+          [
+            {
+              "id": "hello2-1",
+              "name": "hello2"
+            }
+          ],
+          [
+            {
+              "id": "hello5-1",
+              "name": "hello5"
+            }
+          ],
+          [
+            {
+              "id": "hello4-1",
+              "name": "hello4"
+            }
+          ]
+        ]
       },
       ...
     ],
     "contexts": { // contexts to be passed to the components
-      "global": {
-        "page": {
-          "id": "page-1",
+      "page": {
+        "global": {
+          "pageId": "page-1",
           "name": "home",
           ... // more page level context
         },
         ... //more global context
       },
-      "components": {
-        "hello1": {
+      "modules": {
+        "hello1-1": { // by ID
           "data": {
             "prop1": 1,
             "prop2": "hello1",
@@ -86,10 +138,11 @@ This examples shows how to dynamically import modules via [`import()`](https://g
 - Application Layout Component: `pages/_app.js`
 - Base Rendering Engine (for all routes): `pages/BaseLayoutEngine.js`
 - Component Registry: `components/lib/componentRegistry.js`
-- Layout Renderer: `components/lib/renderers/layout.js`
+- Layout Renderer: `components/lib/renderers/layoutRenderer.js`
 - Page Service Mocks: `mocks/page-service`
 
 Self-signed certificates under `certificates/` for running http2 server.
+[Can be removed later]
 
 ## Bundle Analyzer
 
