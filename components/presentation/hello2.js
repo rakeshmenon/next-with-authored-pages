@@ -9,7 +9,7 @@ const DynamicComponent3WithNoSSR = dynamic({
 });
 
 export default ({ context }) => (
-  <div>
+  <div style={{ border: '1px dashed #555' }}>
     <ComponentInfo
       name="Hello2"
       onClick={() =>

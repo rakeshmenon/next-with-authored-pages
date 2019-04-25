@@ -2,7 +2,7 @@ import Context from '../utils/Context';
 import ComponentInfo from '../utils/ComponentInfo';
 
 export default ({ context }) => (
-  <div>
+  <div style={{ border: '1px dashed #555' }}>
     <ComponentInfo
       name="Hello3"
       onClick={() =>
