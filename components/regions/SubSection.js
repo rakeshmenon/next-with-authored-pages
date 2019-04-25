@@ -12,7 +12,11 @@ const SubSection = ({ modules, grids, contexts, id, position }) => {
   let modulesToRender = null;
 
   if (grids.bleed) {
-    modulesToRender = <div>{renderer}</div>;
+    modulesToRender = (
+      <Col fluid center middle>
+        {renderer}
+      </Col>
+    );
   } else {
     const { columns, offsets } = grids;
 

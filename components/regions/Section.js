@@ -1,6 +1,8 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { Grid, Row } from 'react-styled-flexboxgrid';
 import SubSection from '../regions/SubSection';
+import theme from '../lib/theme';
 
 const Section = ({ subsectionInfo, contexts }) => {
   const subsectionType = subsectionInfo.type;
@@ -44,9 +46,11 @@ const Section = ({ subsectionInfo, contexts }) => {
   return bleed ? (
     <section className="bleed-section">{subsectionMarkup}</section>
   ) : (
-    <Grid>
-      <Row>{subsectionMarkup}</Row>
-    </Grid>
+    <ThemeProvider theme={theme}>
+      <Grid>
+        <Row>{subsectionMarkup}</Row>
+      </Grid>
+    </ThemeProvider>
   );
 };
 
