@@ -3,57 +3,29 @@
   "layout": {
     "sections": [
       {
-        "id": "222",
-        "type": {
-          "columns": [
-            {
-              "lg": 6,
-              "md": 6,
-              "sm": 12,
-              "xs": 12
-            },
-            {
-              "lg": 6,
-              "md": 6,
-              "sm": 12,
-              "xs": 12
-            }
-          ],
-          "offsets": []
-        },
-        "modules": [
-          [
-            {
-              "id": "hello1-1",
-              "name": "hello1"
-            }
-          ],
-          [
-            {
-              "id": "hello7-1",
-              "name": "hello7"
-            }
-          ]
-        ]
-      },
-      {
         "id": "333",
         "type": {
           "columns": [
             {
-              "lg": 4,
+              "lg": 3,
               "md": 6,
               "sm": 12,
               "xs": 12
             },
             {
-              "lg": 4,
+              "lg": 3,
               "md": 6,
               "sm": 12,
               "xs": 12
             },
             {
-              "lg": 4,
+              "lg": 3,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            {
+              "lg": 3,
               "md": 6,
               "sm": 12,
               "xs": 12
@@ -76,6 +48,12 @@
           ],
           [
             {
+              "id": "hello7-1",
+              "name": "hello7"
+            }
+          ],
+          [
+            {
               "id": "hello6-1",
               "name": "hello6"
             }
@@ -83,15 +61,61 @@
         ]
       },
       {
-        "id": "111",
+        "id": "222",
+        "type": {
+          "columns": [
+            {
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            {
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            },
+            {
+              "lg": 4,
+              "md": 6,
+              "sm": 12,
+              "xs": 12
+            }
+          ],
+          "offsets": []
+        },
+        "modules": [
+          [
+            {
+              "id": "hello2-1",
+              "name": "hello2"
+            }
+          ],
+          [
+            {
+              "id": "hello5-1",
+              "name": "hello5"
+            }
+          ],
+          [
+            {
+              "id": "hello4-1",
+              "name": "hello4"
+            }
+          ]
+        ]
+      },
+      {
+        "id": "444",
         "type": {
           "bleed": true
         },
         "modules": [
           [
             {
-              "id": "hello2-1",
-              "name": "hello1"
+              "id": "hello4-2",
+              "name": "hello4"
             }
           ]
         ]
@@ -105,46 +129,52 @@
         }
       },
       "modules": {
-        "hello1": {
+        "hello1-1": {
           "data": {
             "prop1": 1,
-            "prop2": "hello1"
+            "prop2": "hello1-1"
           }
         },
-        "hello2": {
+        "hello2-1": {
           "data": {
             "prop1": 2,
-            "prop2": "hello2"
+            "prop2": "hello2-1"
           }
         },
-        "hello3": {
+        "hello3-1": {
           "data": {
             "prop1": 3,
-            "prop2": "hello3"
+            "prop2": "hello3-1"
           }
         },
-        "hello4": {
+        "hello4-1": {
           "data": {
             "prop1": 4,
-            "prop2": "hello4"
+            "prop2": "hello4-1"
           }
         },
-        "hello5": {
+        "hello4-2": {
           "data": {
             "prop1": 5,
-            "prop2": "hello5"
+            "prop2": "hello4-2"
           }
         },
-        "hello6": {
+        "hello5-1": {
           "data": {
             "prop1": 6,
-            "prop2": "hello6"
+            "prop2": "hello5-1"
           }
         },
-        "hello7": {
+        "hello6-1": {
           "data": {
             "prop1": 7,
-            "prop2": "hello7"
+            "prop2": "hello6-1"
+          }
+        },
+        "hello7-1": {
+          "data": {
+            "prop1": 8,
+            "prop2": "hello7-1"
           }
         }
       }
