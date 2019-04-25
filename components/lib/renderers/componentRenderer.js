@@ -4,8 +4,6 @@ import ComponentRegistry from '../componentRegistry';
 const componentRenderer = ({
   componentList,
   subsectionId = 'Unknown',
-  nested = false,
-  level = 0,
   contexts = {}
 }) => {
   if (!Array.isArray(componentList)) {
@@ -19,18 +17,8 @@ const componentRenderer = ({
 
       return (
         <Fragment key={componentId}>
-          <Module />
+          <Module context={contexts.modules[moduleId]} />
         </Fragment>
-      );
-    } else if (Array.isArray(item)) {
-      return (
-        <div key={componentId}>
-          {componentRenderer({
-            componentList: item,
-            nested: true,
-            level: level + 1
-          })}
-        </div>
       );
     } else {
       return null;

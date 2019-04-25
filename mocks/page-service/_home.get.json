@@ -143,46 +143,52 @@
         }
       },
       "modules": {
-        "hello1": {
+        "hello1-1": {
           "data": {
             "prop1": 1,
-            "prop2": "hello1"
+            "prop2": "hello1-1"
           }
         },
-        "hello2": {
+        "hello2-1": {
           "data": {
             "prop1": 2,
-            "prop2": "hello2"
+            "prop2": "hello2-1"
           }
         },
-        "hello3": {
+        "hello3-1": {
           "data": {
             "prop1": 3,
-            "prop2": "hello3"
+            "prop2": "hello3-1"
           }
         },
-        "hello4": {
+        "hello4-1": {
           "data": {
             "prop1": 4,
-            "prop2": "hello4"
+            "prop2": "hello4-1"
           }
         },
-        "hello5": {
+        "hello4-2": {
           "data": {
             "prop1": 5,
-            "prop2": "hello5"
+            "prop2": "hello4-2"
           }
         },
-        "hello6": {
+        "hello5-1": {
           "data": {
             "prop1": 6,
-            "prop2": "hello6"
+            "prop2": "hello5-1"
           }
         },
-        "hello7": {
+        "hello6-1": {
           "data": {
             "prop1": 7,
-            "prop2": "hello7"
+            "prop2": "hello6-1"
+          }
+        },
+        "hello7-1": {
+          "data": {
+            "prop1": 8,
+            "prop2": "hello7-1"
           }
         }
       }

@@ -8,7 +8,6 @@ require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
 const { publicRuntimeConfig } = getConfig();
-console.log(publicRuntimeConfig);
 
 export default class MyApp extends App {
   static async getInitialProps({ ctx }) {
